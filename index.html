@@ -7,7 +7,46 @@
     <link rel="stylesheet" href="materialize.min.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="teal-text text-darken-4">Welcome to Cribz</h1>
+        <h3 class="teal-text text-darken-4">The API for tracking baby data</h3>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col s3 teal-text text-darken-4">
+                <div class="section">
+                    <h5 class="teal-text text-darken-4">GET: /api/babies</h5>
+                    <div class="divider"></div>
+                    <p class="teal-text text-darken-3">Use this endpoint to get data on all babies in the database</p>
+                </div>
+            </div>
+            <div class="col s3 teal-text text-darken-4">
+                <div class="section">
+                    <h5 class="teal-text text-darken-4">POST:</h5>
+                    <h5 class="teal-text text-darken-4">/api/babies/add/:params</h5>
+                    <div class="divider"></div>
+                    <p class="teal-text text-darken-3">Use this endpoint to add babies to the database. Pass a parameter object in JSON format. optional params in [brackets].</p>
+                    <p>{first_name: string, last_name: string, gender: string, birthday: "yyyy-mm-dd HH:MM:SS", [last_feeding: timestamp], [last_diaper: timestamp]}</p>
+                </div>
+            </div>
+            <div class="col s3 teal-text text-darken-4">
+                <div class="section">
+                    <h5 class="teal-text text-darken-4">PATCH: </h5>
+                    <h5 class="teal-text text-darken-4">/api/babies/:idOrName</h5>
+                    <div class="divider"></div>
+                    <p class="teal-text text-darken-3">This endpoint is for updating parameters on babies exsisting in the database. You can modify the same paramters as in the POST endpoint</p>
+                </div>
+            </div>
+            <div class="col s3 teal-text text-darken-4">
+                <div class="section">
+                    <h5 class="teal-text text-darken-4">DELETE:</h5>
+                    <h5 class="teal-text text-darken-4">/api/babies/:idOrName</h5>
+                    <div class="divider"></div>
+                    <p class="teal-text text-darken-3">Remove a baby entry from the database by id or name</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
     <script src="materialize.min.js"></script>
 </body>
 </html>

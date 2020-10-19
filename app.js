@@ -15,24 +15,24 @@ const app = express();
 
 app.use(express.static("./"));
 
-app.get("/babies", (req, res) => {
+app.get("/api/babies", (req, res) => {
     const limit = req.query.limit || null;
 
     const result = knex("babies").select().limit(limit);
     res.send(result);
 });
 
-app.post("/babies/add/:params", (req, res) => {
+// app.post("/babies/add/:params", (req, res) => {
 
-})
+// })
 
-app.patch("/babies/;idOrName", (req, res) => {
-    
-})
+// app.patch("/babies/;idOrName", (req, res) => {
 
-app.delete("/babies/:idOrName", (req, res) => {
+// })
 
-})
+// app.delete("/babies/:idOrName", (req, res) => {
+
+// })
 
 app.listen(5000, () => {
     console.log("listening at 5000");
