@@ -1,0 +1,16 @@
+{
+  "name": "cribz-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "michael piastucki",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.6",
+    "pg": "^8.4.1"
+  }
+}
