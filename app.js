@@ -14,11 +14,10 @@ const knex = require('knex')({
 const app = express();
 
 app.use(express.static("./"));
+app.use(express.json());
 
 app.get("/api/babies", (req, res) => {
-    const limit = req.query.limit || null;
-
-    const result = knex("babies").select().limit(limit);
+    const result = knex().select().from("babies");
     res.send(result);
 });
 
