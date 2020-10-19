@@ -17,11 +17,20 @@ app.use(express.static("./"));
 
 app.get("/babies", (req, res) => {
     const limit = req.query.limit || null;
+
     const result = knex("babies").select().limit(limit);
     res.send(result);
 });
 
-app.get("/babies/:idOrName", (req, res) => {
+app.post("/babies/add/:params", (req, res) => {
+
+})
+
+app.patch("/babies/;idOrName", (req, res) => {
+    
+})
+
+app.delete("/babies/:idOrName", (req, res) => {
 
 })
 
