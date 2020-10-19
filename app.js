@@ -25,7 +25,7 @@ app.get("/api/babies", (req, res) => {
 
 // })
 
-// app.patch("/babies/;idOrName", (req, res) => {
+// app.patch("/babies/:idOrName", (req, res) => {
 
 // })
 
