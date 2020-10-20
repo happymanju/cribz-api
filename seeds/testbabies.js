@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('babies').insert([
-        {id: 1, first_name: 'Steve', last_name: 'Harbinger of the End', gender: "M", birthday: '2020-01-11 10:23:52'},
-        {id: 2, first_name: 'Aladaria', last_name: 'Ashbringer', gender: "F", birthday: '2020-02-22 09:15:30'},
-        {id: 3, first_name: 'Rendt', last_name: 'Kingbreaker', gender: "M", birthday: '2020-01-11 10:23:52'}
+        {id: 1, full_name: 'steve', gender: "M"},
+        {id: 2, full_name: 'aladaria', gender: "F"},
+        {id: 3, full_name: 'rendt', gender: "M"}
       ]);
     });
 };
