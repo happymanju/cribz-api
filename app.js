@@ -28,26 +28,26 @@ app.get("/api/babies", (req, res) => {
 app.get("/api/babies/:name", (req, res) => {
   const name = req.params.name;
   const result = knex('babies').select().where({full_name:name}).then((data) => {
-    console.log(data);
     return res.send(data);
   })
 })
 
 app.post("/api/babies", (req, res) => {
-  const newBaby = {full_name: req.body.full_name, gender: req.body.gender};
-  knex('babies').insert(newBaby).then((res) => {
-    console.log(newBaby);
-    return res.send(newBaby);
-  })
+  const newBaby = req.body;
+  knex('babies').insert(newBaby).then(() => res.send(newBaby)).catch((err) => console.log(err));
 })
 
-// app.patch("/api/babies/:idOrName", (req, res) => {
+// app.patch("/api/babies/:name", (req, res) => {
+//   const babyUpdates = req.body;
 
 // })
 
-// app.delete("/api/babies/:idOrName", (req, res) => {
-
-// })
+app.delete("/api/babies/:id", (req, res) => {
+  const idToDelete = req.body;
+  knex('babies').where({id: Number(idToDelete)}).del().then((rows) => {
+    return res.send(`${rows} row(s) where deleted.`)
+  }).catch((err) => {console.log(err)})
+})
 
 app.listen(5000, () => {
     console.log("listening at 5000");
